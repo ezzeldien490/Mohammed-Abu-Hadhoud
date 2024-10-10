@@ -1,0 +1,72 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+struct communication
+{
+	string Email;
+	string Phone;
+};
+
+struct customer
+{
+	string Name, City, Country;
+	unsigned short Age;
+	float MonthlySalary;
+	char Gender;
+	bool Married;
+	communication Contact;
+
+};
+
+int main()
+{
+	customer Customer1;
+
+	cout << "Please enter your name:\n";
+	getline(cin, Customer1.Name); cout << endl;
+
+ 	
+	cout << "Please enter your age:\n";
+	cin >> Customer1.Age; cout << endl;
+
+
+	cout << "Please enter your city:\n";
+	cin >> Customer1.City; cout << endl;
+
+	cout << "Please enter your country:\n";
+	cin >> Customer1.Country; cout << endl;
+
+	cout << "Please enter your monthly salary:\n";
+	cin >> Customer1.MonthlySalary; cout << endl;
+
+	float YearlySalary = Customer1.MonthlySalary * 12;
+
+	cout << "Please enter your gender (M/F):\n";
+	cin >> Customer1.Gender; cout << endl;
+
+	cout << "Please indicate if you are married (0/1):\n";
+	cin >> Customer1.Married; cout << endl << endl;
+
+	cout << "Please enter your email:\n" << endl;
+	cin >> Customer1.Contact.Email; cout << endl;
+
+	cout << "Please enter your phone number:\n";
+	cin >> Customer1.Contact.Phone;  cout << endl << endl;
+
+	cout << "***************************\n";
+	cout << "Name: " << Customer1.Name << endl;
+	cout << "Age:  " << Customer1.Age << " Years" << endl;
+	cout << "City: " << Customer1.City << endl;
+	cout << "Country: " << Customer1.Country << endl;
+	cout << "Monthly salary: " << Customer1.MonthlySalary << endl;
+	cout << "Yearly salary: " << YearlySalary << endl;
+	cout << "Gender: " << Customer1.Gender << endl;
+	cout << "Married: " << Customer1.Married << endl;
+	cout << "Email:  " << Customer1.Contact.Email << endl;
+	cout << "Phone number: " << Customer1.Contact.Phone << endl;
+	cout << "***************************";
+
+	return 0;
+}
