@@ -3,76 +3,88 @@
 
 using namespace std;
 
-struct communication
+enum enStatus {Single, Married};
+enum enGender {Male, Female};
+
+struct stAddress
+{
+	string StreetName;
+	string BuildingNo;
+};
+
+struct stContactInfo
 {
 	string Email;
 	string Phone;
+	stAddress Address;
 };
 
-struct customer
+struct stPerson
 {
 	string Name, City, Country;
 	unsigned short Age;
-	//char Gender;
-	//bool Married;
 	float MonthlySalary;
-	communication Contact;
+	stContactInfo ContactInfo;
+	enStatus Status;
+	enGender Gender;
 
 };
 
-enum Status {Single, Married};
-enum Gender {M, F};
 
 int main()
 {
-	Gender G = Gender::M;
-	Status M = Status::Married;
-	customer Customer1;
+	stPerson Person;
 
 	cout << "Please enter your name:\n";
-	getline(cin, Customer1.Name); cout << endl;
+	getline(cin, Person.Name); cout << endl;
 
  	
 	cout << "Please enter your age:\n";
-	cin >> Customer1.Age; cout << endl;
+	cin >> Person.Age; cout << endl;
 
 
 	cout << "Please enter your city:\n";
-	cin >> Customer1.City; cout << endl;
+	cin >> Person.City; cout << endl;
 
 	cout << "Please enter your country:\n";
-	cin >> Customer1.Country; cout << endl;
+	cin >> Person.Country; cout << endl;
 
 	cout << "Please enter your monthly salary:\n";
-	cin >> Customer1.MonthlySalary; cout << endl;
+	cin >> Person.MonthlySalary; cout << endl;
 
-	float YearlySalary = Customer1.MonthlySalary * 12;
+	float YearlySalary = Person.MonthlySalary * 12;
 
-	//cout << "Please enter your gender (M/F):\n";
-	//cin >> Customer1.Gender; cout << endl;
-	
-
-	//cout << "Please indicate if you are married (0/1):\n";
-	//cin >> Customer1.Married; cout << endl;
+	Person.Status = enStatus::Married;
+	Person.Gender = enGender::Male;
 
 
 	cout << "Please enter your email:\n";
-	cin >> Customer1.Contact.Email; cout << endl;
+	cin >> Person.ContactInfo.Email; cout << endl;
 
 	cout << "Please enter your phone number:\n";
-	cin >> Customer1.Contact.Phone;  cout << endl << endl;
+	cin >> Person.ContactInfo.Phone;  cin.ignore(); cout << endl;
+
+
+	cout << "Please enter your Street name:\n";
+	getline(cin, Person.ContactInfo.Address.StreetName); cout << endl;
+
+	cout << "Please enter your building number:\n";
+	getline(cin, Person.ContactInfo.Address.BuildingNo); cout << endl << endl;
+
 
 	cout << "***************************\n";
-	cout << "Name: " << Customer1.Name << endl;
-	cout << "Age:  " << Customer1.Age << " Years" << endl;
-	cout << "City: " << Customer1.City << endl;
-	cout << "Country: " << Customer1.Country << endl;
-	cout << "Monthly salary: " << Customer1.MonthlySalary << endl;
+	cout << "Name: " << Person.Name << endl;
+	cout << "Age:  " << Person.Age << " Years" << endl;
+	cout << "City: " << Person.City << endl;
+	cout << "Country: " << Person.Country << endl;
+	cout << "Monthly salary: " << Person.MonthlySalary << endl;
 	cout << "Yearly salary: " << YearlySalary << endl;
-	cout << "Gender: " << G << endl;
-	cout << "Married: " << M << endl;
-	cout << "Email:  " << Customer1.Contact.Email << endl;
-	cout << "Phone number: " << Customer1.Contact.Phone << endl;
+	cout << "Gender: " << Person.Gender << endl;
+	cout << "Married: " << Person.Status << endl;
+	cout << "Email:  " << Person.ContactInfo.Email << endl;
+	cout << "Phone number: " << Person.ContactInfo.Phone << endl;
+	cout << "Street name: " << Person.ContactInfo.Address.StreetName << endl;
+	cout << "Building number: " << Person.ContactInfo.Address.BuildingNo << endl;
 	cout << "***************************";
 
 	return 0;
