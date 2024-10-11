@@ -13,6 +13,8 @@ struct customer
 {
 	string Name, City, Country;
 	unsigned short Age;
+	//char Gender;
+	//bool Married;
 	float MonthlySalary;
 	communication Contact;
 
@@ -23,11 +25,8 @@ enum Gender {M, F};
 
 int main()
 {
-	char Ge;
-	string Ma;
-
-	Gender G;
-	Status M;
+	Gender G = Gender::M;
+	Status M = Status::Married;
 	customer Customer1;
 
 	cout << "Please enter your name:\n";
@@ -49,17 +48,15 @@ int main()
 
 	float YearlySalary = Customer1.MonthlySalary * 12;
 
-	cout << "Please enter your gender (M/F):\n";
-	cin >> Ge; cout << endl;
+	//cout << "Please enter your gender (M/F):\n";
+	//cin >> Customer1.Gender; cout << endl;
+	
 
-	G = Gender::Ge;
+	//cout << "Please indicate if you are married (0/1):\n";
+	//cin >> Customer1.Married; cout << endl;
 
-	cout << "Please indicate if you are married (Single/Married):\n";
-	cin >> Ma; cout << endl << endl;
 
-	M = Status::Ma;
-
-	cout << "Please enter your email:\n" << endl;
+	cout << "Please enter your email:\n";
 	cin >> Customer1.Contact.Email; cout << endl;
 
 	cout << "Please enter your phone number:\n";
