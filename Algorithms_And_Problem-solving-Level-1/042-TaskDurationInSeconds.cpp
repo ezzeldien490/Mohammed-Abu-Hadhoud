@@ -3,6 +3,12 @@
 
 using namespace std;
 
+float fnTotalSeconds(float Days, float Hours, float Minutes, float Seconds)
+{
+
+	float TotalSeconds = Seconds + (Days * 24 * 60 * 60) + (Hours * 60 * 60) + (Minutes * 60);
+	return TotalSeconds;
+}
 int main()
 {
 	float Days, Hours, Minutes, Seconds;
@@ -19,8 +25,7 @@ int main()
 	cout << "Please enter the number of seconds?\n";
 	cin >> Seconds; cout << endl << endl;
 
-	float TotalSeconds = Seconds + (Days * 24 * 60 * 60) + (Hours * 60 * 60) + (Minutes * 60);
-
+	float TotalSeconds = fnTotalSeconds(Days, Hours, Minutes, Seconds);
 	cout << round(TotalSeconds) << " Seconds.";
 
 	return 0;

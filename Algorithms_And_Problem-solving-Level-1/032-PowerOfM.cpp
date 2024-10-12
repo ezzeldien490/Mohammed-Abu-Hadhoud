@@ -3,6 +3,12 @@
 
 using namespace std;
 
+float PowerOfM(float Number, unsigned short PowerValue)
+{
+
+	float Result = pow(Number, PowerValue);
+	return Result;
+}
 int main()
 {
 	float Number;
@@ -14,8 +20,7 @@ int main()
 	cout << "Please enter the power value?\n";
 	cin >> PowerValue; cout << endl << endl;
 
-	float Result = pow(Number, PowerValue);
-
+	float Result = PowerOfM(Number, PowerValue);
 	cout << Result << "  Round : " << round(Result);
 
 	return 0;
