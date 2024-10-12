@@ -3,14 +3,20 @@
 
 using namespace std;
 
+double CircleAreaThroughSquareCircumference(unsigned short SquareCircumference)
+{
+
+	float CircleArea = pow(SquareCircumference, 2) / (4 * 3.14);
+	return CircleArea;
+}
 int main()
 {
-	unsigned short CircleCircumference;
+	unsigned short SquareCircumference;
 
-	cout << "Enter circle circumference?\n";
-	cin >> CircleCircumference; cout << endl << endl;
-
-	float CircleArea = pow(CircleCircumference, 2) / (4 * 3.14);
+	cout << "Enter Square circumference?\n";
+	cin >> SquareCircumference; cout << endl << endl;
+	
+	double CircleArea = CircleAreaThroughSquareCircumference(SquareCircumference);
 	unsigned short FinalResult = floor(CircleArea);
 
 	cout << "Circle area = " << CircleArea << endl;

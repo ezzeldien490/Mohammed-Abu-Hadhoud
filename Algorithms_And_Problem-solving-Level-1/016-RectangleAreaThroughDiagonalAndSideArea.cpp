@@ -3,6 +3,13 @@
 
 using namespace std;
 
+double RectangleArea(short RectangleSide, short RectangleDiagonal)
+{
+
+	double RectangleArea = RectangleSide * sqrt(pow(RectangleDiagonal, 2) - pow(RectangleSide, 2));
+	return RectangleArea;
+}
+
 int main()
 {
 
@@ -14,9 +21,8 @@ int main()
 	cout << "Please enter rectangle diagonal value?\n";
 	cin >> RectangleDiagonal;  cout << endl << endl;
 
-	double RectangleArea = RectangleSide * sqrt(pow(RectangleDiagonal, 2) - pow(RectangleSide, 2));
 
-	cout << RectangleArea;
+	cout << RectangleArea(RectangleSide, RectangleDiagonal);
 
 	return 0;
 

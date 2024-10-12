@@ -3,6 +3,14 @@
 
 using namespace std;
 
+double CircleAreaInscribedInTriangle(short TriangleSide, short TriangleBase)
+{
+
+	double CircleArea = (3.14 * pow(TriangleBase, 2) * (2 * TriangleSide - TriangleBase)) 
+		/ ( 4 * (2 * TriangleSide + TriangleBase));
+	return CircleArea;
+}
+
 int main()
 {
 	short TriangleSide, TriangleBase;
@@ -13,8 +21,7 @@ int main()
 	cout << "Enter length of base of triangle?\n";
 	cin >> TriangleBase; cout << endl << endl;
 
-	float CircleArea = (3.14 * pow(TriangleBase, 2) * (2 * TriangleSide - TriangleBase)) / ( 4 * (2 * TriangleSide + TriangleBase));
-
+	double CircleArea = CircleAreaInscribedInTriangle(TriangleSide, TriangleBase);
 	unsigned short FinalResult = floor(CircleArea);
 
 	cout << "Circle area = " << CircleArea << endl;

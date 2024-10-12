@@ -1,9 +1,14 @@
 #include <iostream>
 using namespace std;
 
+float RectangleArea(float RectangleLength, float RectangleWidth)
+{
+	float RectangleArea = RectangleLength * RectangleWidth;
+	return RectangleArea;
+}
 int main()
 {
-	short RectangleLength, RectangleWidth;
+	float RectangleLength, RectangleWidth;
 
 	cout << "Enter rectangle length?\n";
 	cin >> RectangleLength; cout << endl;
@@ -12,8 +17,8 @@ int main()
 	cin >> RectangleWidth; cout << endl << endl;
 
 
-	short RectangleArea = RectangleLength * RectangleWidth;
-	cout << "Rectangle area is " << RectangleArea << endl;
+
+	cout << RectangleArea(RectangleLength, RectangleWidth) << endl;
 	
 	return 0;
 
