@@ -23,17 +23,17 @@ struct stPerson
 {
 	string Name, City, Country;
 	unsigned short Age;
-	float MonthlySalary;
+	float MonthlySalary, YearlySalary;
 	stContactInfo ContactInfo;
 	enStatus Status;
 	enGender Gender;
 
 };
 
-
-int main()
+void ReadInfo(stPerson &Person)
 {
-	stPerson Person;
+
+	int G, M;
 
 	cout << "Please enter your name:\n";
 	getline(cin, Person.Name); cout << endl;
@@ -44,19 +44,25 @@ int main()
 
 
 	cout << "Please enter your city:\n";
-	cin >> Person.City; cout << endl;
+	getline(cin >> ws, Person.City); cout << endl;
 
 	cout << "Please enter your country:\n";
-	cin >> Person.Country; cout << endl;
+	getline(cin >> ws, Person.Country); cout << endl;
 
 	cout << "Please enter your monthly salary:\n";
 	cin >> Person.MonthlySalary; cout << endl;
 
-	float YearlySalary = Person.MonthlySalary * 12;
+	Person.YearlySalary = Person.MonthlySalary * 12;
 
-	Person.Status = enStatus::Married;
-	Person.Gender = enGender::Male;
+	cout << "Please enter your marital status(Single = 0/ Married = 1)?\n";
+	cin >> M; cout << endl;
 
+	cout << "Please enter your Gender(M = 0/ F = 1)?\n";
+	cin >> G; cout << endl;
+
+	Person.Gender = enGender(G);
+	Person.Status = enStatus(M);
+	
 
 	cout << "Please enter your email:\n";
 	cin >> Person.ContactInfo.Email; cout << endl;
@@ -70,7 +76,11 @@ int main()
 
 	cout << "Please enter your building number:\n";
 	getline(cin, Person.ContactInfo.Address.BuildingNo); cout << endl << endl;
+}
 
+
+void PrintInfo(stPerson Person)
+{
 
 	cout << "***************************\n";
 	cout << "Name: " << Person.Name << endl;
@@ -78,7 +88,7 @@ int main()
 	cout << "City: " << Person.City << endl;
 	cout << "Country: " << Person.Country << endl;
 	cout << "Monthly salary: " << Person.MonthlySalary << endl;
-	cout << "Yearly salary: " << YearlySalary << endl;
+	cout << "Yearly salary: " << Person.YearlySalary << endl;
 	cout << "Gender: " << Person.Gender << endl;
 	cout << "Married: " << Person.Status << endl;
 	cout << "Email:  " << Person.ContactInfo.Email << endl;
@@ -86,6 +96,13 @@ int main()
 	cout << "Street name: " << Person.ContactInfo.Address.StreetName << endl;
 	cout << "Building number: " << Person.ContactInfo.Address.BuildingNo << endl;
 	cout << "***************************";
+}
+int main()
+{
+	stPerson Person;
+	ReadInfo(Person);
+	PrintInfo(Person);
+
 
 	return 0;
 }
