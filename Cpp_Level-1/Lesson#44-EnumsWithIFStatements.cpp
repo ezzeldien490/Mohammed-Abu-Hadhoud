@@ -4,7 +4,7 @@
 using namespace std;
 
 enum enScreenColor {Blue=1, Green=2, Red=3, Yellow=4};
-void ReadColorChoice(int &c)
+void ShowColorChoices()
 {
     cout << "************************\n";
     cout << "Please chose the number of your color?\n";
@@ -14,14 +14,17 @@ void ReadColorChoice(int &c)
     cout << "(4) Yellow\n";
     cout << "************************\n\n";
     cout << "Your choice?\n";
-    cin >> c; cout << endl;
 }
 
-void DisplayScreenColor(int c)
+enScreenColor ReadChoice()
 {
-    enScreenColor Color;
-    Color = (enScreenColor) c;
+    int c;
+    cin >> c;
+    return (enScreenColor) c;
+}
 
+void DisplayScreenColor(enScreenColor Color)
+{
     switch (Color)
     {
     case enScreenColor::Blue:
@@ -46,8 +49,8 @@ void DisplayScreenColor(int c)
 int main()
 {
     int c;
-    ReadColorChoice(c);
-    DisplayScreenColor(c);
+    ShowColorChoices();
+    DisplayScreenColor(ReadChoice());
 
     return 0;
       
