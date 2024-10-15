@@ -48,7 +48,6 @@ void DisplayScreenColor(enScreenColor Color)
 
 int main()
 {
-    int c;
     ShowColorChoices();
     DisplayScreenColor(ReadChoice());
 
