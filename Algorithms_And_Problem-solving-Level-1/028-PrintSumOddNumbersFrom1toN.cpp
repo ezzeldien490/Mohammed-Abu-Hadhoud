@@ -12,13 +12,14 @@ void ReadN(unsigned short &N)
 int SumOddNumbers(unsigned short N)
 {
     int Sum = 0;
-
-    for (unsigned short Counter = 1; Counter <= N; Counter++)
+    unsigned short Counter = 1;
+    while (Counter <= N)
     {
         if (Counter % 2 != 0)
         {
             Sum += Counter;
         }
+        Counter++;
     }
 
     return Sum;

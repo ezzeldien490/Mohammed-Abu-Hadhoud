@@ -10,7 +10,7 @@ void ReadNumber(short &Number)
 
 void CheckNumberValidate(short &Number)
 {
-    for (; Number  <= 0;)
+    while (Number  <= 0)
     {
         cout << "Positive Number only" << endl;
         ReadNumber(Number);

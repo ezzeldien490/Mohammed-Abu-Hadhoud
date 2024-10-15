@@ -11,9 +11,11 @@ void ReadN(unsigned short &N)
 
 void PrintNumbers(unsigned short N)
 {
-    for(N; N > 0  ; N--)
+    
+    while(N > 0)
     {
         cout << N << endl;
+        N--;
     }
 }
 
