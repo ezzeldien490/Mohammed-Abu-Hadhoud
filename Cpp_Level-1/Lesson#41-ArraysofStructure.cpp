@@ -34,31 +34,40 @@ void PrintPersonInfo(stPersonInfo Person)
     cout << "Age: " << Person.Age << " Years." << endl;
     cout << "Phone: " << Person.Phone << endl;
 
-    cout << "******************************\n";
+    cout << "******************************\n\n";
 }
 
-void ReadAllPersonInfo(stPersonInfo Persons[2])
+void ReadAllPersonInfo(stPersonInfo Persons[100], unsigned short &Lenght)
 {
-    ReadPersonInfo(Persons[0]);
+    cout << "Please enter number of persons?\n";
+    cin >> Lenght; cout << endl;
 
-    cout << "Person 2 Info:\n";
-    ReadPersonInfo(Persons[1]);
+    for (short Counter = 0; Counter < Lenght; Counter++)
+    {
+        cout << "Person" << Counter + 1 << "Info:\n";
+        ReadPersonInfo(Persons[Counter]);
+    }
 }
 
-void PrintAllPersonInfo(stPersonInfo Persons[2])
+void PrintAllPersonInfo(stPersonInfo Persons[100], unsigned short Lenght)
 {
-    PrintPersonInfo(Persons[0]);
-    PrintPersonInfo(Persons[1]);
+    for (short Counter = 0; Counter < Lenght; Counter++)
+    {
+        cout << "Person" << Counter + 1 << "Info:\n";
+        PrintPersonInfo(Persons[Counter]);
+    }
+ 
 }
 
 
 
 int main()
 {
-    stPersonInfo Persons[2];
+    unsigned short Length;
+    stPersonInfo Persons[100];
 
-    ReadAllPersonInfo(Persons);
-    PrintAllPersonInfo(Persons);
+    ReadAllPersonInfo(Persons, Length);
+    PrintAllPersonInfo(Persons, Length);
 
     return 0;
 }
