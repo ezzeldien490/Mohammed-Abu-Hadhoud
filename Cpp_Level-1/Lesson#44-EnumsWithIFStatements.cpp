@@ -22,25 +22,24 @@ void DisplayScreenColor(int c)
     enScreenColor Color;
     Color = (enScreenColor) c;
 
-    if (Color == enScreenColor::Blue)
+    switch (Color)
     {
+    case enScreenColor::Blue:
         system ("color 1F");
-    }
-    else if (Color == enScreenColor::Green)
-    {
+        break;
+    case enScreenColor::Green:
         system ("color 2F");
-    }
-    else if (Color == enScreenColor::Red)
-    {
+        break;
+    case enScreenColor::Red:
         system ("color 4F");
-    }
-    else if (Color == enScreenColor::Yellow)
-    {
+        break;
+    case enScreenColor::Yellow:
         system ("color 6F");
-    }
-    else
-    {
-        system ("color 1F");
+        break;
+    
+    default:
+        system ("color 5F");
+        break;
     }
 }
 

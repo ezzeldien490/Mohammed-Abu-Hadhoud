@@ -16,34 +16,35 @@ string WhatIsDay(unsigned short Day)
         cout << "Wrong Day";
         exit(0);
     }
-    else if (Day == 1)
-    {
-        return "Its Sunday";
-    }
-    else if (Day == 2)
-    {
-        return "Its Monday";
-    }
-    else if (Day == 3)
-    {
-        return "Its Tuesday";
-    }
-    else if (Day == 4)
-    {
-        return "Its Wednesday";
-    }
-    else if (Day == 5)
-    {
-        return "Its Thursday";
-    }
-    else if (Day == 6)
-    {
-        return "Its Friday";
-    }
     else
     {
-        return "Its Saturday";
+        switch (Day)
+        {
+        case 1:
+            cout << "Its Sunday";
+            break;
+        case 2:
+            cout << "Its Monday";
+            break;
+        case 3:
+            cout << "Its Tuesday";
+            break;
+        case 4:
+            cout << "Its Wednesday";
+            break;
+        case 5:
+            cout << "Its Thursday";
+            break;
+        case 6:
+            cout << "Its Friday";
+            break;
+        default:
+            cout << "Its Saturday";
+            break;
+        }
+
     }
+    
 }
 
 int main()

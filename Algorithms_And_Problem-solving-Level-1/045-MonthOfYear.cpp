@@ -17,53 +17,47 @@ string WhatIsMonth(unsigned short Month)
         cout << "Wrong Month";
         exit(0);
     }
-    else if (Month == 1)
-    {
-        return "Its January";
-    }
-    else if (Month == 2)
-    {
-        return "Its February";
-    }
-    else if (Month == 3)
-    {
-        return "Its March";
-    }
-    else if (Month == 4)
-    {
-        return "Its April";
-    }
-    else if (Month == 5)
-    {
-        return "Its May";
-    }
-    else if (Month == 6)
-    {
-        return "Its June";
-    }
-    else if (Month == 7)
-    {
-        return "Its July";
-    }
-    else if (Month == 8)
-    {
-        return "Its August";
-    }
-    else if (Month == 9)
-    {
-        return "Its Seprember";
-    }
-    else if (Month == 10)
-    {
-        return "Its October";
-    }
-    else if (Month == 11)
-    {
-        return "Its November";
-    }
     else
-    {
-        return "Its December";
+    {  
+        switch (Month)
+        {
+        case 1:
+            cout << "Its Jenurary";
+            break;
+        case 2:
+            cout << "Its Febuary";
+            break;
+        case 3:
+            cout << "Its March";
+            break;
+        case 4:
+            cout << "Its April";
+            break;
+        case 5:
+            cout << "Its May";
+            break;
+        case 6:
+            cout << "Its June";
+            break;
+        case 7:
+            cout << "Its July";
+            break;
+        case 8:
+            cout << "Its August";
+            break;
+        case 9:
+            cout << "Its September";
+            break;
+        case 10:
+            cout << "Its October";
+            break;
+        case 11:
+            cout << "Its November";
+            break;
+        default:
+            cout << "Its December";
+            break;
+        }           
     }
 }
 

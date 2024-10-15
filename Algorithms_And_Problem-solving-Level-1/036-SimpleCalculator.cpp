@@ -23,27 +23,26 @@ void ReadEquation(stEquation &Equation)
 
 float Calculator(stEquation Equation)
 {
-    if (Equation.OperationType == '+')
+    switch (Equation.OperationType)
     {
+    case '+':
         return Equation.Number1 + Equation.Number2;
-    }
-    else if (Equation.OperationType == '-')
-    {
+        break;
+    case '-':
         return Equation.Number1 - Equation.Number2;
-    }
-    else if (Equation.OperationType == '*')
-    {
+        break;
+    case '*':
         return Equation.Number1 * Equation.Number2;
-    }
-    else if (Equation.OperationType == '/')
-    {
+        break;
+    case '/':
         return Equation.Number1 / Equation.Number2;
-    }
-    else
-    {
-        cout << "Avalible Operators: [+, -, *, /]" << endl;
+        break;
+    
+    default:
+        cout << "Avalible Operarotrs: [+, -, *, /]";
         exit(0);
     }
+    
 }
 
 int main()
