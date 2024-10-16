@@ -3,24 +3,31 @@
 
 using namespace std;
 
-double CircleAreaThroughSquareSide(unsigned short SquareSide)
+float ReadSquareSide()
 {
-
- 	double CircleArea = (3.14 * pow(SquareSide, 2)) / 4;
-	return CircleArea;
-}
-int main()
-{
-	unsigned short SquareSide;
+	float SquareSide;
 
 	cout << "Please enter square side?\n";
 	cin >> SquareSide; cout << endl << endl;
-	
-	double CircleArea = CircleAreaThroughSquareSide(SquareSide);
-	unsigned short FinalResult = ceil(CircleArea);
 
-	cout << "Circle area = " << CircleArea <<  endl;
-	cout << "Final result = " << FinalResult;
+	return SquareSide;
+}
 
+float CircleAreaBySquareSide(float SquareSide)
+{
+	const float PI = 3.141592653589793238;
+ 	float CircleArea = (PI * pow(SquareSide, 2)) / 4;
+	return CircleArea;
+}
+
+void PrintCircleArea(float CircleArea)
+{
+		cout << "Circle area = " << CircleArea <<  endl;
+}
+
+
+int main()
+{
+	PrintCircleArea(CircleAreaBySquareSide(ReadSquareSide()));
 	return 0;
 }

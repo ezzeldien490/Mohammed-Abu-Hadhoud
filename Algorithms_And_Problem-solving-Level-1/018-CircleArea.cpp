@@ -3,7 +3,13 @@
 
 using namespace std;
 
-float fnCircleArea(unsigned short CircleRadius)
+void ReadCircleRadius(unsigned short &CircleRadius)
+{
+	cout << "Please enter the Circle radius?\n";
+	cin >> CircleRadius; cout << endl << endl;
+}
+
+float CircleAreaByRadius(unsigned short CircleRadius)
 {
 
 	float CircleArea = 3.14 * pow(CircleRadius, 2);
@@ -11,18 +17,17 @@ float fnCircleArea(unsigned short CircleRadius)
 
 }
 
+void PrintCircleArea(float CircleArea)
+{
+	cout << "Circle area = " << CircleArea << endl;
+}
+
+
 int main()
 {
 	unsigned short CircleRadius;
-
-	cout << "Please enter the Circle radius?\n";
-	cin >> CircleRadius; cout << endl << endl;
-
-	float CircleArea = fnCircleArea(CircleRadius);
-	unsigned short FinalResult = ceil(CircleArea);
-
-	cout << "Circle area = " << CircleArea << endl;
-	cout << "Final result = " << FinalResult;
+	ReadCircleRadius(CircleRadius);
+	PrintCircleArea(CircleAreaByRadius(CircleRadius));
 
 	return 0;
 }

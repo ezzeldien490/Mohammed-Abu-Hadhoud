@@ -2,19 +2,22 @@
 
 using namespace std;
 
-string PrintUserName(string UserName)
+string ReadName()
 {
-	cout << UserName;
+	string Name;
+	cout << "Please enter your name?\n";
+	getline(cin, Name); cout << endl;
+	return Name;
+}
+
+void PrintUserName(string UserName)
+{
+	cout << "Your name is: " <<  UserName ;
 }
 
 int main()
 {
-	string UserName;
-
-	cout << "Please enter your name?\n";
-	getline(cin, UserName); cout << endl;
-
-	PrintUserName(UserName);
+	PrintUserName(ReadName());
 
 	return 0;
 }

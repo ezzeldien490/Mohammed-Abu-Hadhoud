@@ -1,27 +1,38 @@
 #include <iostream>
 using namespace std;
 
-struct enUserName
+struct stUserName
 {
     string FirstName;
     string LastName;
 };
 
-void ReadUserName(enUserName &UserName)
+stUserName ReadUserName()
 {
+    stUserName UserName;
     cout << "Please enter your first name?\n";
     getline(cin >> ws, UserName.FirstName); cout << endl;
 
     cout << "Please enter your last name?\n";
     getline(cin >>ws, UserName.LastName); cout << endl;
+
+    return UserName;
 }
+
+string GetFullName(stUserName UserName)
+{
+    string FullName = "";
+    FullName = UserName.FirstName + " " + UserName.LastName;
+    return FullName;
+}
+void PringFullName(string FullName)
+{
+    cout << "Your full name is: " << FullName;
+}
+
 
 int main()
 {
-    enUserName UserName;
-
-    ReadUserName(UserName);
-    cout << UserName.FirstName << " " << UserName.LastName;
-
+    PringFullName(GetFullName(ReadUserName()));
     return 0;
 }

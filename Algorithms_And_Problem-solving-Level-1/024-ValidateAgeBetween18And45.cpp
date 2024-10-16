@@ -2,30 +2,35 @@
 
 using namespace std;
 
-void ReadAge(unsigned short &Age)
+enum enAgeStatus {ValidAge, InvalidAge};
+
+short ReadAge()
 {
+    short Age;
     cout << "Please enter your age?\n";
     cin >> Age; cout << endl;
+
+    return Age;
 }
 
-string CheckValidate(unsigned short Age)
+enAgeStatus CheckValidate(short Age)
 {
     if(Age >= 18 && Age <= 45)
-    {
-        return "Valid Age";
-    }
+        return ValidAge;
     else
-    {
-        return "Invalid Age";
-    }
+        return InvalidAge;
+}
+
+void PrintAgeStatus(short Age)
+{
+    if (CheckValidate(Age) == ValidAge)
+        cout << "Vaild age.\n";
+    else
+        cout << "Invalid age.\n";
 }
 
 int main()
 {
-    unsigned short Age;
-
-    ReadAge(Age);
-    cout << CheckValidate(Age);
-
+    PrintAgeStatus(ReadAge());
     return 0;
 }

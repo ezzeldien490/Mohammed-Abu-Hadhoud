@@ -2,28 +2,39 @@
 
 using namespace std;
 
-void ReadNumber(short &Number)
+enum enNumberType {Odd = 1, Even = 2};
+
+int ReadNumber()
 {
+    short Number;
+
     cout << "Please enter a number?\n";
-    cin >> Number; cout << endl;
+    cin >> Number;
+    return Number;
 }
 
-string ODDorEvenNumber(short Number)
+enNumberType CheckNumberType(short Number)
 {
     if (Number % 2 == 0)
-        return "Even";
+        return Even;
     
     else
-        return "ODD";
+        return Odd;
+}
+
+void PrintNumberType(enNumberType NumberType)
+{
+    if (NumberType  == Even)
+        cout << "\n Number is Even. \n";
+    else
+        cout << "\n Number is Odd. \n";
+
 }
 
 
 int main()
 {
-    short Number;
-    ReadNumber(Number);
-    cout << "Number is " << ODDorEvenNumber(Number);
+    PrintNumberType(CheckNumberType(ReadNumber()));
 
     return 0;
-
 }

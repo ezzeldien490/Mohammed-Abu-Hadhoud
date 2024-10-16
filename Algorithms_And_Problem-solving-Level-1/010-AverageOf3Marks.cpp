@@ -1,21 +1,40 @@
-#include <iostream> 
+#include <iostream>
 using namespace std;
+
+struct stNumbers
+{
+	float Number1, Number2, Number3;
+};
+
+stNumbers ReadNumbers()
+{
+	stNumbers Numbers;
+
+	cout << "Please enter first Number?\n";
+	cin >> Numbers.Number1; cout << endl;
+
+	cout << "Please enter second Number?\n";
+	cin >> Numbers.Number2; cout << endl;
+
+	cout << "Please enter third Number?\n";
+	cin >> Numbers.Number3; cout << endl << endl;
+
+	return Numbers;
+}
+
+float AverageOf3Numbers(stNumbers Numbers)
+{
+	return (float) (Numbers.Number1 + Numbers.Number2 + Numbers.Number3) / 3;
+}
+
+void PrintResult(stNumbers Numbers)
+{
+	cout << "The Average of numbers = " << AverageOf3Numbers(Numbers);
+}
+
 
 int main()
 {
-	short Mark1, Mark2, Mark3;
-
-	cout << "Please enter First Mark?\n";
-	cin >> Mark1; cout << endl;
-
-	cout << "Please enter second Mark?\n";
-	cin >> Mark2; cout << endl;
-
-	cout << "Please enter third Mark?\n";
-	cin >> Mark3; cout << endl << endl;
-
-	cout << "Average of 3 Marks is " << (Mark1 + Mark2 + Mark3) / 3 << endl;
-
+	PrintResult(ReadNumbers());
 	return 0;
-
 }

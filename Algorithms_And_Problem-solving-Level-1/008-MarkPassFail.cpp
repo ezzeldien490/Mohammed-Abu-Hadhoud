@@ -1,30 +1,34 @@
 #include <iostream>
 
 using namespace std;
-
-void ReadMark(float &Mark)
-{
-    cout << "Please enter your mark?\n";
-    cin >> Mark;    cout << endl;
-}
-
-string PassOrFail(float Mark)
-{
-    if (Mark >= 50)
-    {
-        return "PASS";
-    }
-    else
-    {
-        return "Fail";
-    }
-        
-}
-int main()
+enum enStudentStatus {Pass = 1, Fail = 2};
+float ReadMark()
 {
     float Mark;
-   ReadMark(Mark);
-   cout << PassOrFail(Mark);
+    cout << "Please enter your mark?\n";
+    cin >> Mark;    cout << endl;
+    return Mark;
+}
 
+enStudentStatus PassOrFail(float Mark)
+{
+    if (Mark >= 50)
+        return Pass;
+    else
+        return Fail;
+}
+
+void PrintStudentStatus(int Mark)
+{
+    if (PassOrFail(Mark) == Pass)
+        cout << "Pass.\n";
+    else
+        cout << "Fail.\n";
+}
+
+
+int main()
+{
+   PrintStudentStatus(ReadMark());
    return 0;
 }

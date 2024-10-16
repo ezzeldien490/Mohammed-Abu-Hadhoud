@@ -1,26 +1,38 @@
 #include <iostream>
 using namespace std;
 
-float RectangleArea(float RectangleLength, float RectangleWidth)
-{
-	float RectangleArea = RectangleLength * RectangleWidth;
-	return RectangleArea;
-}
-int main()
+struct stRectangleInfo
 {
 	float RectangleLength, RectangleWidth;
+};
+
+stRectangleInfo ReadRectangleInfo()
+{
+	stRectangleInfo RectangleInfo;
 
 	cout << "Enter rectangle length?\n";
-	cin >> RectangleLength; cout << endl;
+	cin >> RectangleInfo.RectangleLength; cout << endl;
 
 	cout << "Enter rectangle width?\n";
-	cin >> RectangleWidth; cout << endl << endl;
+	cin >> RectangleInfo.RectangleWidth; cout << endl << endl;
 
+	return RectangleInfo;
+}
 
+float RectangleArea(stRectangleInfo RectangleInfo)
+{
+	float RectangleArea = RectangleInfo.RectangleLength *  RectangleInfo.RectangleWidth;
+	return RectangleArea;
+}
 
-	cout << RectangleArea(RectangleLength, RectangleWidth) << endl;
+void PrintResult(stRectangleInfo RectangleInfo)
+{
+	cout << RectangleArea(RectangleInfo);
+}
+
+int main()
+{
+	PrintResult(ReadRectangleInfo());
 	
 	return 0;
-
-
 }

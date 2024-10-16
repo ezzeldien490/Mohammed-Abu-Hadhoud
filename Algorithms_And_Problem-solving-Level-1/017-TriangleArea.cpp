@@ -1,21 +1,31 @@
 #include <iostream>
 using namespace std;
 
-int main()
+void ReadTringleBaseAndHigh(short &TriangleBase, short &TriangleHigh)
 {
-	short TriangleBase, TriangleHigh;
-
 	cout << "Enter triangle base?\n";
 	cin >> TriangleBase; cout << endl;
 
 	cout << "Enter triangle high?\n";
 	cin >> TriangleHigh; cout << endl << endl;
+}
 
+float TriangleAreaByBaseAndHigh(short A, short B)
+{
+	float TriangleArea =(float) (A / 2) * B;
+	return TriangleArea;
+}
 
-	short TriangleArea = (TriangleBase / 2) * TriangleHigh;
-	cout << "Triangle area is " << TriangleArea << endl;
+void PrintTriangleArea(float TriangleArea)
+{
+	cout << "Triangle area = " << TriangleArea;
+}
 
+int main()
+{
+	short TriangleBase, TriangleHigh;
+	ReadTringleBaseAndHigh(TriangleBase, TriangleHigh);
+	PrintTriangleArea(TriangleAreaByBaseAndHigh(TriangleBase, TriangleHigh));
+	
 	return 0;
-
-
 }

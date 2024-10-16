@@ -3,27 +3,31 @@
 
 using namespace std;
 
-float CircleAreaThroughDiameter(short CircleDiameter)
+float ReadCircleDiameter()
 {
-
-	float CircleArea = (3.14 * pow(CircleDiameter, 2)) / 4;
-	return CircleArea;
-}
-
-int main()
-{
-	short CircleDiameter;
+	float CircleDiameter;
 
 	cout << "Enter circle diameter?\n";
 	cin >> CircleDiameter; cout << endl << endl;
-	
-	float CircleArea = CircleAreaThroughDiameter(CircleDiameter);
-	unsigned short FinalResult = ceil(CircleArea);
+	return CircleDiameter;
+}
 
+float CircleAreaByDiameter(float CircleDiameter)
+{
+	const float PI = 3.141592653589793238;
 
+	float CircleArea = (PI * pow(CircleDiameter, 2)) / 4;
+	return CircleArea;
+}
+
+void PrintCircleArea(float CircleArea)
+{
 	cout << "Circle area = " << CircleArea << endl;
-	cout << "Final result = " << FinalResult; 
+}
 
+
+int main()
+{
+	PrintCircleArea(CircleAreaByDiameter(ReadCircleDiameter()));
 	return 0;
-
 }

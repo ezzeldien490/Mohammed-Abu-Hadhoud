@@ -8,34 +8,37 @@ struct stDriverInfo
     bool DriverLicense;
 };
 
-void ReadDriverInfo(stDriverInfo &DriverInfo)
+stDriverInfo ReadDriverInfo()
 {
+    stDriverInfo DriverInfo;
     cout << "Please enter your age?\n";
     cin >> DriverInfo.Age; cout << endl;
 
     cout << "Do you have a driver license(Yes = 1, No = 0)?\n";
     cin >> DriverInfo.DriverLicense; cout << endl;
+
+    return DriverInfo;
 }
 
-string HiredOrRegected(stDriverInfo DriverInfo)
+bool IsAccepted(stDriverInfo DriverInfo)
 {
-    if (DriverInfo.Age > 21 && DriverInfo.DriverLicense == true) 
-    {
-        return "Hired";
-    }   
-    else
-    {
-        return "Rejected";
-    }
+    return (DriverInfo.Age > 21 && DriverInfo.DriverLicense == true);
+    
 }
+
+void PrintDriverStatus(stDriverInfo DriverInfo)
+{
+    if(IsAccepted(DriverInfo))
+        cout << "Hired.";
+    else
+        cout << "Rejected.";
+}
+
 
 int main()
 {
-    stDriverInfo DriverInfo;
 
-    ReadDriverInfo(DriverInfo);
-
-    cout << HiredOrRegected(DriverInfo);
+    PrintDriverStatus(ReadDriverInfo());
     return 0;
 }
 

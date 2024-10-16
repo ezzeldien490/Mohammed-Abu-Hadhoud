@@ -2,14 +2,14 @@
 
 using namespace std;
 
-void PrintMyName()
+void PrintName(string Name)
 {
-	cout << "Ezz Eldien Ayman Fouad";
+	cout << "Your name is: " << Name << endl;
 }
 
 int main()
 {
-	PrintMyName();
+	PrintName("Ezz Eldien Ayman");
 
 	return 0;
 }

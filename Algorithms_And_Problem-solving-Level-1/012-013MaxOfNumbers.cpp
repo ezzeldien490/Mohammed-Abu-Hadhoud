@@ -32,13 +32,18 @@ int MaxNumber(int arr[10], short Length)
     }
 }
 
+void PrintMaxNumber(int MaxNumber)
+{
+    cout  << "The Max number is: " << MaxNumber;
+}
+
+
 int main()
 {
     int arr[10];
     short Length;
 
     ReadNumbers(arr, Length);
-    cout  << "The Max number is: " << MaxNumber(arr, Length);
-
+    PrintMaxNumber(MaxNumber(arr, Length));
     return 0;
 }

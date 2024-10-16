@@ -3,33 +3,38 @@
 
 using namespace std;
 
-double CircleAreaInscribedInTriangle(short TriangleSide, short TriangleBase)
+struct stTriangleDimensions
 {
+	float TriangleSide, TriangleBase;
+};
 
-	double CircleArea = (3.14 * pow(TriangleBase, 2) * (2 * TriangleSide - TriangleBase)) 
-		/ ( 4 * (2 * TriangleSide + TriangleBase));
+stTriangleDimensions ReadTriangleDimensions()
+{
+	stTriangleDimensions TriangleDimensions;
+	cout << "Enter length of side of triangle?\n";
+	cin >> TriangleDimensions.TriangleSide; cout << endl;
+	
+	cout << "Enter length of base of triangle?\n";
+	cin >> TriangleDimensions.TriangleBase; cout << endl << endl;
+
+	return TriangleDimensions;
+}
+
+float CircleAreaInscribedInTriangle(stTriangleDimensions TriangleDimensions)
+{
+	const float PI = 3.141592653589793238;
+	float CircleArea = (PI * pow(TriangleDimensions.TriangleBase, 2) * (2 * TriangleDimensions.TriangleSide - TriangleDimensions.TriangleBase)) 
+		/ ( 4 * (2 * TriangleDimensions.TriangleSide + TriangleDimensions.TriangleBase));
 	return CircleArea;
+}
+
+void PrintCircleArea(float CircleArea)
+{
+	cout << "Circle area = " << CircleArea << endl;
 }
 
 int main()
 {
-	short TriangleSide, TriangleBase;
-
-	cout << "Enter length of side of triangle?\n";
-	cin >> TriangleSide; cout << endl;
-	
-	cout << "Enter length of base of triangle?\n";
-	cin >> TriangleBase; cout << endl << endl;
-
-	double CircleArea = CircleAreaInscribedInTriangle(TriangleSide, TriangleBase);
-	unsigned short FinalResult = floor(CircleArea);
-
-	cout << "Circle area = " << CircleArea << endl;
-	cout << "Final result = " << FinalResult;
-	
-
+	PrintCircleArea(CircleAreaInscribedInTriangle(ReadTriangleDimensions()));
 	return 0;
-
-
-
 }

@@ -2,13 +2,16 @@
 
 using namespace std;
 
+enum enStudentStatus {Pass, Fail};
 struct stStudentMarks
 {
     float Mark1, Mark2, Mark3;
 };
 
-void ReadMarks(stStudentMarks &Marks)
+stStudentMarks ReadMarks()
 {
+    stStudentMarks Marks;
+
     cout << "Please enter mark1?\n";
     cin >> Marks.Mark1; cout << endl;
 
@@ -17,34 +20,36 @@ void ReadMarks(stStudentMarks &Marks)
 
     cout << "Please enter mark3?\n";
     cin >> Marks.Mark3; cout << endl;
+
+    return Marks;
 }
 
-float AverageOfMarks(stStudentMarks Marks)
+float AverageOf3Marks(stStudentMarks Marks)
 {
-    return (Marks.Mark1 + Marks.Mark2 + Marks.Mark3) / 3;
+    return (float) (Marks.Mark1 + Marks.Mark2 + Marks.Mark3) / 3;
 }
 
-string PassOrFail(float Average)
+enStudentStatus PassOrFail(float Average)
 {
-    if(Average >= 50)
-    {
-        return "PASS";
-    }
+    if(Average >= 50)  
+        return Pass;
     else 
-    {
-        return "Fail";
-    }
+        return Fail;
+}
+
+void PrintStudentStatus(float Average)
+{
+    cout << "Your Average is: " << Average << endl;
+
+    if (PassOrFail(Average) == Pass)
+        cout << "You Passed.";
+    else
+        cout << "You Failed.";
 }
 
 
 int main()
 {
-    stStudentMarks Marks;
-
-    ReadMarks(Marks);
-    float Average = AverageOfMarks(Marks);
-    cout << Average << endl;
-    cout << PassOrFail(Average);
-
+    PrintStudentStatus(AverageOf3Marks(ReadMarks()));
     return 0;
 }

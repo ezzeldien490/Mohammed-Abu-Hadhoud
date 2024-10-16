@@ -3,26 +3,31 @@
 
 using namespace std;
 
-double CircleAreaThroughSquareCircumference(unsigned short SquareCircumference)
+float ReadSquareCircumference()
 {
-
-	float CircleArea = pow(SquareCircumference, 2) / (4 * 3.14);
-	return CircleArea;
-}
-int main()
-{
-	unsigned short SquareCircumference;
+	float SquareCircumference;
 
 	cout << "Enter Square circumference?\n";
 	cin >> SquareCircumference; cout << endl << endl;
-	
-	double CircleArea = CircleAreaThroughSquareCircumference(SquareCircumference);
-	unsigned short FinalResult = floor(CircleArea);
 
+	return SquareCircumference;
+}
+
+double CircleAreaThroughSquareCircumference(float SquareCircumference)
+{
+	const float PI = 3.141592653589793238;
+	float CircleArea = pow(SquareCircumference, 2) / (4 * PI);
+	return CircleArea;
+}
+
+void PrintCircleArea(float CircleArea)
+{
 	cout << "Circle area = " << CircleArea << endl;
-	cout << "Final result = " << FinalResult;
+}
 
 
+int main()
+{
+	PrintCircleArea(CircleAreaThroughSquareCircumference(ReadSquareCircumference()));
 	return 0;
-
 }
