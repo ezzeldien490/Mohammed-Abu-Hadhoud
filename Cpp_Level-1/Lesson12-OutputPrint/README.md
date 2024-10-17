@@ -5,10 +5,10 @@ This directory contains exercises related to output printing in C++. The files i
 
 ## File Descriptions
 
-1. **[H1.cpp](./H1.cpp)**: Demonstrates basic output printing.
-2. **[H2.cpp](./H2.cpp)**: Illustrates formatted output using manipulators.
-3. **[H3.cpp](./H3.cpp)**: Shows outputting different data types.
-4. **[H4.cpp](./H4.cpp)**: Provides examples of printing complex data structures.
+1. **[H1.cpp](./H1.cpp)**: Prints personal information to the output.
+2. **[H2.cpp](./H2.cpp)**: Prints a rectangle shape formed by stars.
+3. **[H3.cpp](./H3.cpp)**: Prints a short message about loving programming.
+4. **[H4.cpp](./H4.cpp)**: Prints an "H" shape created with stars.
 
 ## How to Use This Directory
 - Click on each file link to view the code.
