@@ -1,7 +1,7 @@
 # C++ Level 1 Lessons
 
 ## Overview
-This directory contains lessons and exercises for the C++ Level 1 course. Each file represents a specific lesson, covering fundamental concepts of C++ programming.
+This directory contains lessons and exercises for the C++ Level 1 course. Each lesson folder contains exercises that cover fundamental concepts of C++ programming.
 
 ## Lesson Descriptions
 
