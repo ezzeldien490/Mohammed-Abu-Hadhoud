@@ -62,6 +62,8 @@ This directory contains a series of C++ programming problems aimed at developing
 44. **[047-LoanInstallmentMonths.cpp](./047-LoanInstallmentMonths.cpp)**: Calculates loan installment months.
 45. **[048-MonthlyLoanInstallment.cpp](./048-MonthlyLoanInstallment.cpp)**: Computes monthly loan installments.
 46. **[050-ATMPIN3Times.cpp](./050-ATMPIN3Times.cpp)**: Validates ATM PIN after three attempts.
+47. **[051-PrintSumOfNumbers.cpp](./051-PrintSumOfNumbers.cpp)**: The Sum Calculator is a C++ console application that allows users to compute the sum of numbers based on their choice of category: odd numbers, even numbers, or all numbers. This project demonstrates the use of functions, enumerations, and basic arithmetic operations in C++ programming.
+
 
 ## How to Use This Directory
 - Click on each problem link to view the solution and implementation details.
