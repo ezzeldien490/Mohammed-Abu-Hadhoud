@@ -6,7 +6,7 @@ This directory contains lessons and exercises for the C++ Level 1 course. Each l
 ## Lesson Descriptions
 
 1. **[Lesson12-OutputPrint](./Lesson12-OutputPrint)**: Introduces output printing in C++.
-2. **[Lesson16-LiteralsandEscapeSequences](./Lesson16-LiteralsandEscapeSequences)**: Explains literals and escape sequences.
+2. **[Lesson16-LiteralsandEscapeSequences](Lesson16-Literals-and-EscapeSequences)**: Explains literals and escape sequences.
 3. **[Lesson17-Variables](./Lesson17-Variables)**: Covers variable declaration and initialization.
 4. **[Lesson20-ArithmeticOperators](./Lesson20-ArithmeticOperators)**: Discusses arithmetic operations and their usage.
 5. **[Lesson24-RelationalOperators](./Lesson24-RelationalOperators)**: Describes relational operators in C++.
