@@ -4,13 +4,13 @@
 This repository contains my homework and practice exercises for the programming courses provided by Abu-Hadhoud on [programmingadvices.com](https://programmingadvices.com/courses/). Currently, I am working on two courses: **Algorithms_Problem-solving_Level1** and **Cpp_Level1**. Each course focuses on building foundational skills and practical problem-solving abilities in programming.
 
 ## Courses Covered
-### 1. Algorithms_Problem-solving_Level1
+### 1. [Algorithms_Problem-solving_Level1](./Algorithms_Problem-solving_Level1/)
 This course focuses on:
 - Understanding fundamental algorithms.
 - Developing problem-solving strategies.
 - Practicing with exercises to improve algorithmic thinking.
 
-### 2. Cpp_Level1
+### 2. [Cpp_Level1](./Cpp_Level1/)
 This course covers:
 - Basic syntax and features of C++.
 - Object-oriented programming concepts.
