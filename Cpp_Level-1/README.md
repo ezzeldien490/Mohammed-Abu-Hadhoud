@@ -5,15 +5,15 @@ This directory contains lessons and exercises for the C++ Level 1 course. Each f
 
 ## Lesson Descriptions
 
-1. **[Lesson#12-OutputPrint.cpp](./Lesson#12-OutputPrint)**: Introduces output printing in C++.
-2. **[Lesson#16-Literals-and-EscapeSequences.cpp](./Lesson#16-Literals-and-EscapeSequences)**: Explains literals and escape sequences.
-3. **[Lesson#17-Variables.cpp](./Lesson#17-Variables)**: Covers variable declaration and initialization.
-4. **[Lesson#20-ArithmeticOperators.cpp](./Lesson#20-ArithmeticOperators)**: Discusses arithmetic operations and their usage.
-5. **[Lesson#24-RelationalOperators.cpp](./Lesson#24-RelationalOperators)**: Describes relational operators in C++.
-6. **[Lesson#25-LogicalOperators.cpp](./Lesson#25-LogicalOperators)**: Introduces logical operators and their applications.
-7. **[Lesson#49-NestedForLoops.cpp](./Lesson#49-NestedForLoops)**: Demonstrates the use of nested for loops.
-8. **[Lesson#27-Structures.cpp](./Lesson#27-Structures)**: Discusses structures for data reusability.
-9. **[Lesson#30-DataTypeConversion.cpp](./Lesson#30-DataTypeConversion)**: Explains data type conversion in C++.
+1. **[Lesson#12-OutputPrint](./Lesson#12-OutputPrint)**: Introduces output printing in C++.
+2. **[Lesson#16-Literals-and-EscapeSequences](./Lesson#16-Literals-and-EscapeSequences)**: Explains literals and escape sequences.
+3. **[Lesson#17-Variables](./Lesson#17-Variables)**: Covers variable declaration and initialization.
+4. **[Lesson#20-ArithmeticOperators](./Lesson#20-ArithmeticOperators)**: Discusses arithmetic operations and their usage.
+5. **[Lesson#24-RelationalOperators](./Lesson#24-RelationalOperators)**: Describes relational operators in C++.
+6. **[Lesson#25-LogicalOperators](./Lesson#25-LogicalOperators)**: Introduces logical operators and their applications.
+7. **[Lesson#49-NestedForLoops](./Lesson#49-NestedForLoops)**: Demonstrates the use of nested for loops.
+8. **[Lesson#27-Structures.cpp](./Lesson#27-Structures.cpp)**: Discusses structures for data reusability.
+9. **[Lesson#30-DataTypeConversion.cpp](./Lesson#30-DataTypeConversion.cpp)**: Explains data type conversion in C++.
 10. **[Lesson#31-Strings.cpp](./Lesson#31-Strings.cpp)**: Covers string manipulation using `getline`.
 11. **[Lesson#32-FunctionsPart1.cpp](./Lesson#32-FunctionsPart1.cpp)**: Introduces basic functions in C++.
 12. **[Lesson#34-FunctionsPartII-FunctionsVsProcedures.cpp](./Lesson#34-FunctionsPartII-FunctionsVsProcedures.cpp)**: Compares functions and procedures.
