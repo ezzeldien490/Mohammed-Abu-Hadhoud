@@ -2,20 +2,32 @@
 
 using namespace std;
 
-void ReadN(unsigned short &N)
+enum enOddOrEven {Odd = 1, Even = 2};
+
+short ReadN()
 {
+    short N;
     cout << "Enter a Number?\n";
     cin >> N; cout << endl;
 
+    return N;
 }
 
-int SumEnenNumbers(unsigned short N)
+enOddOrEven CheckOddOrEven(short N)
+{
+    if (N % 2 != 0)
+        return Odd;
+    else
+        return Even;
+}
+
+int SumOfEvenNumbers(short N)
 {
     int Sum = 0;
 
     for (unsigned short Counter = 1; Counter <= N; Counter++)
     {
-        if (Counter % 2 == 0)
+        if (CheckOddOrEven(Counter) == Even)
         {
             Sum += Counter;
         }
@@ -24,11 +36,14 @@ int SumEnenNumbers(unsigned short N)
     return Sum;
 }
 
+void PrintSumOfEvenNumbers(short N)
+{
+    cout << "Sum of even numbers from 1 to " << N << " = " << SumOfEvenNumbers(N);
+}
+
 int main()
 {
-    unsigned short N;
-    ReadN(N);
-    cout << SumEnenNumbers(N);
-    
+    PrintSumOfEvenNumbers(ReadN());
+
     return 0;
 }

@@ -27,16 +27,16 @@ void DisplayScreenColor(enScreenColor Color)
 {
     switch (Color)
     {
-    case enScreenColor::Blue:
+    case Blue:
         system ("color 1F");
         break;
-    case enScreenColor::Green:
+    case Green:
         system ("color 2F");
         break;
-    case enScreenColor::Red:
+    case Red:
         system ("color 4F");
         break;
-    case enScreenColor::Yellow:
+    case Yellow:
         system ("color 6F");
         break;
     

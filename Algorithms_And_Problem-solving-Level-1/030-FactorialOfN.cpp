@@ -2,19 +2,17 @@
 
 using namespace std;
 
-void ReadNumber(short &Number)
+short ReadPositiveNumber(string Message)
 {
-    cout << "Enter a Postive number?\n";
-    cin >> Number; cout << endl;
-}
-
-void CheckNumberValidate(short &Number)
-{
-    while (Number  <= 0)
+    short Number;
+    do
     {
-        cout << "Positive Number only" << endl;
-        ReadNumber(Number);
-    }
+        cout << Message << endl;
+        cin >> Number; cout << endl;
+
+    } while (Number <= 0);
+    
+    return Number;
 }
 
 int GetFactorial(short Number)
@@ -28,13 +26,14 @@ int GetFactorial(short Number)
     return Factorial;
 }
 
+void PrintFactorialOfNumber(short Number)
+{
+    cout << "Factorial of Number " << Number << " = " << GetFactorial(Number);
+}
+
 int main()
 {
-    short Number;
-
-    ReadNumber(Number);
-    CheckNumberValidate(Number);
-    cout << GetFactorial(Number);
+    PrintFactorialOfNumber(ReadPositiveNumber("Enter a Postive number?"));
 
     return 0;
 }

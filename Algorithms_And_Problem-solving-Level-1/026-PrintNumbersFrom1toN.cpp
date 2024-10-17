@@ -2,14 +2,16 @@
 
 using namespace std;
 
-void ReadN(unsigned short &N)
+short ReadN()
 {
+    short N;
     cout << "Enter the Number you want to print numbers from 1 to this number?\n";
     cin >> N; cout << endl;
 
+    return N;
 }
 
-void PrintNumbers(unsigned short N)
+void PrintNumbers(short N)
 {
     short Counter = 1;
     while (Counter <= N)
@@ -20,10 +22,8 @@ void PrintNumbers(unsigned short N)
 }
 
 int main()
-{
-    unsigned short N;
-    ReadN(N);
-    PrintNumbers(N);
+{  
+    PrintNumbers(ReadN());
     
     return 0;
 }
