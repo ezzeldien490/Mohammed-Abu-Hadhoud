@@ -2,43 +2,42 @@
 
 using namespace std;
 
-void ReadTotalSales(float &TotalSales)
+float ReadTotalSales()
 {
-    cout << "Please enter total sales?\n";
-    cin >> TotalSales;  cout << endl;
+    float TotalSales;
+    cout << "Please enter total Sales: " << endl;
+    cin >> TotalSales; cout << endl;
+    return TotalSales;
 }
 
-float CommissionPercentage(float TotalSales)
+float GetCommissionPercentage(float TotalSales)
 {
     if (TotalSales >= 1000000)
-    {
-        return 0.01 * TotalSales;
-    }
+        return 0.01;
     else if (TotalSales >= 500000)
-    {
-        return 0.02 * TotalSales;
-    }
+        return 0.02;
     else if (TotalSales >= 100000)
-    {
-        return 0.03 * TotalSales;
-    }
+        return 0.03;
     else if (TotalSales >= 50000)
-    {
-        return 0.05 * TotalSales;
-    }
+        return 0.05;
     else
-    {
         return 0;
-    }
 }
+
+float CalculateTotalCommission(float TotalSales)
+{
+    return GetCommissionPercentage(TotalSales) * TotalSales;
+}
+
+void PrintCommission(float TotalSales)
+{
+    cout << "Your Commission on $" << TotalSales << " is $" << CalculateTotalCommission(TotalSales);
+}
+
 
 int main()
 {
-    float TotalSales;
-
-    ReadTotalSales(TotalSales);
-    cout << "Your Commission is: " << CommissionPercentage(TotalSales);
+    PrintCommission(ReadTotalSales());
 
     return 0;
-
 }

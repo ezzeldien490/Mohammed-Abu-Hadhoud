@@ -3,33 +3,45 @@
 
 using namespace std;
 
-void ReadInfo(float &Number, unsigned short &PowerValue)
-{
-	cout << "Please enter the number?\n";
-	cin >> Number; cout << endl;
-
-	cout << "Please enter the power value?\n";
-	cin >> PowerValue; cout << endl << endl;
-}
-
-float PowerOfM(float Number, unsigned short PowerValue)
-{
-	if (PowerValue == 0)
-		return 1;
-	float Result = 1;
-	for (short Counter = 0; Counter < PowerValue; Counter++)
-	{
-		 Result*= Number;
-	}
-	return Result;
-}
-int main()
+struct stPowerOfNumber
 {
 	float Number;
 	unsigned short PowerValue;
-	
-	ReadInfo(Number, PowerValue);
-	cout << PowerOfM(Number, PowerValue);
+};
+
+stPowerOfNumber ReadNumberAndPowerValue()
+{
+	stPowerOfNumber PowerOfNumber;
+	cout << "Please enter the number?\n";
+	cin >> PowerOfNumber.Number; cout << endl;
+
+	cout << "Please enter the power value?\n";
+	cin >> PowerOfNumber.PowerValue; cout << endl << endl;
+
+	return PowerOfNumber;
+}
+
+float PowerOfM(stPowerOfNumber PowerOfNumber)
+{
+	if (PowerOfNumber.PowerValue == 0)
+		return 1;
+	float Result = 1;
+	for (short Counter = 0; Counter < PowerOfNumber.PowerValue; Counter++)
+	{
+		 Result *= PowerOfNumber.Number;
+	}
+	return Result;
+}
+
+void PrintResult(stPowerOfNumber PowerOfNumber)
+{
+	cout << PowerOfNumber.Number << " ** " << PowerOfNumber.PowerValue << " = " << PowerOfM(PowerOfNumber);
+}
+
+
+int main()
+{
+	PrintResult(ReadNumberAndPowerValue());
 
 	return 0;
 }

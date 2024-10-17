@@ -3,23 +3,26 @@
 
 using namespace std;
 
+float ReadNumber(string Message)
+{
+	float Number;
+
+	cout << Message << endl;
+	cin >> Number;
+	return Number;
+}
+
 float PowerOf234(float Number)
 {
 	cout << pow(Number,2) << "  round : " << round(pow(Number, 2)) << endl;
 	cout << pow(Number, 3) << "  round : " << round(pow(Number, 3)) << endl;
 	cout << pow(Number, 4) << "  round : " << round(pow(Number, 4)) << endl;
 }
+
+
 int main()
 {
-	float Number;
-
-	cout << "Please Enter a number?\n";
-	cin >> Number; cout << endl << endl;
-
-	PowerOf234(Number);
+	PowerOf234(ReadNumber("Please enter a number: "));
 
 	return 0;
-
-
-
 }

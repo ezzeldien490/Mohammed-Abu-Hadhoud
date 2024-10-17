@@ -1,30 +1,47 @@
 #include <iostream>
 using namespace std;
 
-int main()
+struct stPiggyBankContent
 {
-	float Pennies, Nickels, Dimes, Quarters, Dollars;
+	int Pennies;
+	float Nickels, Dimes, Quarters, Dollars;
+};
+
+stPiggyBankContent ReadPiggyBankContent()
+{
+	stPiggyBankContent PiggyBankContent;
 
 	cout << "Pleas enter the number of Pennies?\n";
-	cin >> Pennies; cout << endl;
+	cin >> PiggyBankContent.Pennies; cout << endl;
 
 	cout << "Please eter the number of Nickels?\n";
-	cin >> Nickels; cout << endl;
+	cin >> PiggyBankContent.Nickels; cout << endl;
 
 	cout << "Please enter the number of Dimes?\n";
-	cin >> Dimes; cout << endl;
+	cin >> PiggyBankContent.Dimes; cout << endl;
 
 	cout << "Please enter the number of Quarters?\n";
-	cin >> Quarters; cout << endl;
+	cin >> PiggyBankContent.Quarters; cout << endl;
 
 	cout << "Please enter the number of Dollars?\n";
-	cin >> Dollars; cout << endl << endl;
-	 
-	float TotalPennies = Pennies + (Nickels * 5) + (Dimes * 10) + (Quarters * 25) + (Dollars * 100);
-	float TotalDollars = TotalPennies / 100;
+	cin >> PiggyBankContent.Dollars; cout << endl << endl;
 
-	cout << TotalPennies << " Pennnies" << endl << TotalDollars << " Dollars" << endl;
+	return PiggyBankContent;
+}
 
+int CalculateTotalPennies(stPiggyBankContent PiggyBankContent)
+{
+	return (int) PiggyBankContent.Pennies + (PiggyBankContent.Nickels * 5) + (PiggyBankContent.Dimes * 10) + (PiggyBankContent.Quarters * 25) + (PiggyBankContent.Dollars * 100);
+}
+
+void PrintTotalPenniesAndDollars(int TotalPennies)
+{
+	cout << "Total Pennies = " << TotalPennies << " Pennies." << endl;
+	cout << "Total Dollars = " << (float) TotalPennies / 100 << " Dollars.";
+}
+
+int main()
+{
+	PrintTotalPenniesAndDollars(CalculateTotalPennies(ReadPiggyBankContent()));
 	return 0;
-
 }
