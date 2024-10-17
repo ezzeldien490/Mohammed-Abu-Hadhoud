@@ -1,13 +1,14 @@
 # Lesson 17 - Variables
 
 ## Overview
-This directory contains exercises focused on variable declaration and initialization in C++. The files include various examples demonstrating the use of different types of variables.
+This directory contains exercises focused on variable declaration and initialization in C++. The files demonstrate how to create variables, assign values to them, and print their values to the output.
 
 ## File Descriptions
+All files in this directory showcase the creation of variables and the process of printing their values.
 
-1. **[H1.cpp](./H1.cpp)**: Demonstrates variable declaration and printing their values.
-2. **[H2.cpp](./H2.cpp)**: Illustrates the use of different data types and their initialization.
-3. **[H3.cpp](./H3.cpp)**: Shows examples of changing variable values and printing updated results.
+1. **[H1.cpp](./H1.cpp)**
+2. **[H2.cpp](./H2.cpp)**
+3. **[H3.cpp](./H3.cpp)**
 
 ## How to Use This Directory
 - Click on each file link to view the code.
