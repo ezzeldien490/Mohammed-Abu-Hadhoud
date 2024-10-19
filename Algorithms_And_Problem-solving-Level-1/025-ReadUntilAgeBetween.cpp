@@ -1,53 +1,40 @@
 #include <iostream>
 using namespace std;
 
-enum enAgeStatus {ValidAge = 1, InvalidAge = 0 };
-struct stFromToAge
+short ReadAge()
 {
-    short From, To, Age;
-};
+    short Age;
+    cout << "Please enter age between 18 and 45: ";
+    cin >> Age; cout << endl;
 
-void ReadFromAndTo(stFromToAge &FromToAge)
-{
-   
-    cout << "Please enter the minimum and maximum ages for the range?\n [using numbers only].\n";
-    cin  >> FromToAge.From;
-    cin >> FromToAge.To; cout << endl;
-
+    return Age;
 }
 
-void ReadAge(stFromToAge &FromToAge)
+bool ValidateNumberInRange(short Age, short From, short To)
 {
-    cout << "Please enter a Age between " << FromToAge.From << " and " << FromToAge.To << "?" << endl;
-    cin >> FromToAge.Age; cout << endl;
+    return (Age >= From && Age <= To);
 }
 
-enAgeStatus CheckAgeValidate(stFromToAge FromToAge)
+short ReadAgeUntilAgeBetween(short From, short To)
 {
-    if(FromToAge.Age >= FromToAge.From && FromToAge.Age <= FromToAge.To)
-        return ValidAge;
-    else
-        return InvalidAge;
+   short Age = ReadAge();
+
+   while (!ValidateNumberInRange(Age, From, To))
+   {
+        cout << " [Invalid Age].\n";
+        Age = ReadAge();
+   }
+
+   return Age;
 }
 
-void  PrintNumber(stFromToAge FromToAge)
+void PrintResult(short Age)
 {
-    while (CheckAgeValidate(FromToAge) == InvalidAge)
-    {
-        cout << "[Invalid Age].\n";
-        ReadAge(FromToAge);
-    } 
-    
-    cout << "[Valid Age].";
+    cout << "   [Valid Age].";
 }
 
 int main()
 {
-    stFromToAge FromToAge;
-
-    ReadFromAndTo(FromToAge);
-    ReadAge(FromToAge);
-    PrintNumber(FromToAge);
-
+    PrintResult(ReadAgeUntilAgeBetween(18, 45));
     return 0;
 }

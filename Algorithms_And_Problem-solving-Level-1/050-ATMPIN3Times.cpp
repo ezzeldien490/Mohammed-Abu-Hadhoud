@@ -1,48 +1,50 @@
 #include <iostream>
-#include <cstdlib>
-
 using namespace std;
 
-struct enUserInfo
+string ReadPinCode()
 {
-    unsigned short PIN;
-    int UserBalance;
-};
-
-void ReadUserInfo(enUserInfo &UserInofo)
-{
-    UserInofo.UserBalance =  7500;
-    cout << "Please etner your PIN?\n";
-    cin >> UserInofo.PIN; cout << endl;
+    string PINCode;
+    cout << "Please enter your PIN Code?\n";
+    cin >> PINCode;
+    
+    return PINCode;
 }
 
-void CheckUserPIN(enUserInfo UserInfo)
+bool LogIn()
 {
-        short Counter = 1;
-        while (UserInfo.PIN != 1234)
+    string PINCode;
+    int Counter = 3;
+
+    do
+    {
+        PINCode = ReadPinCode();
+        Counter--;
+
+        if(PINCode == "1234")
+            return 1;
+        else
         {
-            if (Counter > 2)
-            {
-                cout << "[Wrong PIN]\n";
-                cout << "Card is locked!\n";
-                exit(0);
-            }
-
-            cout << "[Wrong PIN]\n" << endl;
-            ReadUserInfo(UserInfo);
-            Counter++;
+            system("color 4F");
+            cout << "\nWrong PIN, You have " << Counter << " more tries " << endl;
         }
-        return;
-}
-        
 
+    } while (Counter >= 1 && PINCode != "1234");
+
+    return 0;
+}
+ 
 int main()
 {
-    enUserInfo UserInfo;
+    if(LogIn())
+    {
+        system("color 2F");
+        cout << "\nYour Account balance is " << 7500 << endl;
+    }
+    else
+    {
+        system("color 4F");
+        cout << "Your card is locked, contact with bank to more information." << endl;
+    }
 
-    ReadUserInfo(UserInfo);
-    CheckUserPIN(UserInfo);
-
-    cout << "Your Balance is: " << UserInfo.UserBalance;
     return 0;
 }

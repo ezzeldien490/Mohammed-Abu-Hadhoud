@@ -1,30 +1,41 @@
 #include <iostream>
 using namespace std;
 
-void ReadNumberOfHours(float  &NumberOfHours)
+float ReadPositiveNumber(string Message)
 {
-    cout << "Please enter number of hours?\n";
-    cin >> NumberOfHours; cout << endl;
+    float Number;
+    do 
+    {   
+        cout << Message << endl;
+        cin >> Number; cout << endl; 
+    }while (Number <= 0);
+   
+    return Number;
 }
+
 
 float ConvertHoursToDays(float  NumberOfHours)
 {
-    float NumberOfDays =  NumberOfHours / 24;
-    return NumberOfDays;
+    return  NumberOfHours / 24;
 }
+
 float ConvertHoursToWeeks(float  NumberOfHours)
 {
-    float NumberOfWeeks =  NumberOfHours / 24 / 7;
-    return NumberOfWeeks;
+    return NumberOfHours / 24 / 7;
 }
+
+void PrintDaysAndHours(float NumberOfHours)
+{
+    cout << NumberOfHours << " Hours = " << endl;
+    cout << ConvertHoursToDays(NumberOfHours) << " Days" << endl;
+    cout << ConvertHoursToWeeks(NumberOfHours) << " Weeks";
+}
+
 
 int main()
 {
-    float NumberOfHours;
-
-    ReadNumberOfHours(NumberOfHours);
-    cout << ConvertHoursToDays(NumberOfHours) << " Days" << endl;
-    cout << ConvertHoursToWeeks(NumberOfHours) << " Weeks";
+    float NumberOfHours = ReadPositiveNumber("Please enter the number of Hours?");
+    PrintDaysAndHours(NumberOfHours);
 
     return 0;
 }

@@ -3,12 +3,23 @@
 
 using namespace std;
 
-void SecondsToDHMS(int Seconds)
+int ReadPositiveNumber(string Message)
 {
-	int Remainder;
-	int SecondsOfDay = 24 * 60 * 60;
-	unsigned short	SecondsOfHour = 60 * 60,
-		SecondsOfMinute = 60;
+    int Number;
+    do 
+    {   
+        cout << Message << endl;
+        cin >> Number; cout << endl; 
+    }while (Number <= 0);
+   
+    return Number;
+}
+
+void ConvertSecondsToDHMS(int Seconds)
+{
+	int Remainder= 0;
+	const int SecondsOfDay = 24 * 60 * 60;
+	const unsigned short	SecondsOfHour = 60 * 60, SecondsOfMinute = 60;
 
 
 	unsigned short Days = (Seconds / SecondsOfDay);
@@ -24,14 +35,12 @@ void SecondsToDHMS(int Seconds)
 
 	cout << Days << ":" << Hours << ":" << Minutes << ":" << Seconds;
 }
+
+
 int main()
 {
-	int Seconds;
-
-	cout << "Please enter the number of seconds?\n";
-	cin >> Seconds; cout << endl << endl;
-
-	SecondsToDHMS(Seconds);
+	int Seconds = ReadPositiveNumber("Please enter the number of Seconds?");
+	ConvertSecondsToDHMS(Seconds);
 	return 0;
 
 

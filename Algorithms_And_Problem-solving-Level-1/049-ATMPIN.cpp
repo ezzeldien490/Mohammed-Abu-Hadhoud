@@ -1,38 +1,45 @@
 #include <iostream>
-
 using namespace std;
 
-struct stUserInfo
+string ReadPinCode()
 {
-    int PIN;
-    float UserBalance;
-};
+    string PinCode;
+    cout << "Please enter PIN Code? \n";
+    cin >> PinCode;
 
-void ReadUserInfo(stUserInfo &UserInfo)
-{
-    UserInfo.UserBalance = 7500;
-    cout << "Please enter PIN code?\n";
-    cin >> UserInfo.PIN; cout << endl;
+    return PinCode;
 }
 
-string CheckPIN(stUserInfo UserInfo)
+bool LogIn()
 {
-    if(UserInfo.PIN == 1234)
+    string PinCode;
+
+    do
     {
-        cout << "Your Balacne is: " << UserInfo.UserBalance;
-    }
-    else 
-    {
-        cout << "Wrong PIN";
-    }
+        PinCode = ReadPinCode();
+
+        if(PinCode == "1234")
+            return 1;
+        else
+        {
+            system("color 4F");
+            cout  << "\n Wrong PIN" << endl;
+        }
+
+    }while (PinCode != "1234");
+
+    return 0;
+
 }
 
 int main()
 {
-    stUserInfo UserInfo;
+    if(LogIn())
+    {
+        system("color 2F");
+        cout << "\n Your Account balance is " << 7500 << "$\n";
+    }
 
-    ReadUserInfo(UserInfo);
-    CheckPIN(UserInfo);
     return 0;
-
 }
+

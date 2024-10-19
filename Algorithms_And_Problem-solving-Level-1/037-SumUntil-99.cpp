@@ -1,30 +1,36 @@
 #include <iostream>
-
+#include <string>
 using namespace std;
 
-void ReadNumber(int &Number)
+int ReadNumber(string Message)
 {
-    cout << "Please enter a number to sum?\n[To stop enter (-99)]\n";
+    int Number;
+    cout << Message;
     cin >> Number; cout << endl;
+
+    return Number;
 }
 
-int SumNumbers(int Number)
+int SumNumbers()
 {
-    int Sum = 0;
-    while(Number != -99)
+    int Sum = 0, Number = 0, Counter = 1;
+    do
     {
+        Number = ReadNumber("Please enter the number " + to_string(Counter) + ": ");
+        if (Number == -99)
+                break;
+
         Sum += Number;
-        ReadNumber(Number);
-    }
+        Counter++;
+    } while (Number != -99);
+
     return Sum;
 }
 
+
+
 int main()
 {
-    int Number;
-
-    ReadNumber(Number);
-    cout << SumNumbers(Number);
-
+    cout << "Sum of Numbers = " << SumNumbers();
     return 0;
 }

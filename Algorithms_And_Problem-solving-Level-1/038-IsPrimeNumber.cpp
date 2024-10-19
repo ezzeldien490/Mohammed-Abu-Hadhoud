@@ -2,39 +2,52 @@
 #include <cmath>
 using namespace std;
 
-void ReadNumber(int &Number)
+enum enPrimeOrNotPrime {Prime = 1, NotPrime = 2};
+
+float ReadPositiveNumber(string Message)
 {
-    cout << "Enter the postive number you want to check of primality?\n";
-    cin >> Number; cout << endl; 
+    float Number;
+    do 
+    {   
+        cout << Message << endl;
+        cin >> Number; cout << endl; 
+    }while (Number <= 0);
+   
+    return Number;
 }
 
-string CheckNumberPrimality(int Number)
+enPrimeOrNotPrime CheckNumberPrimality(int Number)
 {
-    if (Number <= 2)
-    {
-        return "[Prime].";
-    }
-    
     int MedOfNumber = round(Number / 2);
 
     for(int Counter = 2; Counter <= MedOfNumber; Counter++)
     {
         if (Number % Counter == 0)
             {
-                return "[Not Prime].";
+                return NotPrime;
             }
 
     }
 
-    return "[Prime].";
+    return Prime;
 }
+
+void PrintPrimeOrNot(int Number)
+{
+    switch (CheckNumberPrimality(Number))
+    {
+    case Prime:
+        cout << "Number is Prime";
+        break;
+    case NotPrime:
+        cout << "Number is not Prime";
+        break;
+    }
+}
+
 
 int main()
 {
-    int Number;
-
-    ReadNumber(Number);
-    cout << CheckNumberPrimality(Number);
-
+    PrintPrimeOrNot(ReadPositiveNumber("Enter the postive number you want to check of primality?"));
     return 0;
 }

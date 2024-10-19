@@ -3,55 +3,51 @@
 
 using namespace std;
 
-void ReadDay(unsigned short &Day)
+enum enDaysOfWeek {Sun = 1, Mon = 2, Tues = 3, Wednes = 4, Thurs = 5, Fri = 6, Satur = 7};
+
+int ReadNumberBetweenRange(string Message, int From, int To)
 {
-    cout << "Please enter day number?\n";
-    cin >> Day; cout << endl;
+    int Number;
+    do 
+    {   
+        cout << Message << endl;
+        cin >> Number; cout << endl; 
+    }while (Number < From || Number > To);
+ 
+    return Number;
 }
 
-string WhatIsDay(unsigned short Day)
+enDaysOfWeek ReadDayOfWeek()
 {
-    if (Day <= 0 || Day > 7)
-    {
-        cout << "Wrong Day";
-        exit(0);
-    }
-    else
-    {
+    return (enDaysOfWeek) ReadNumberBetweenRange("Please enter the number of day(Sun = 1, Mon = 2, Tues = 3, Wednes = 4, Thurs = 5, Fri = 6, Satur = 7)?", 1, 7);
+}
+
+string WhatIsDay(enDaysOfWeek Day)
+{
+    
         switch (Day)
         {
-        case 1:
-            cout << "Its Sunday";
-            break;
-        case 2:
-            cout << "Its Monday";
-            break;
-        case 3:
-            cout << "Its Tuesday";
-            break;
-        case 4:
-            cout << "Its Wednesday";
-            break;
-        case 5:
-            cout << "Its Thursday";
-            break;
-        case 6:
-            cout << "Its Friday";
-            break;
-        default:
-            cout << "Its Saturday";
-            break;
+        case Sun:
+            return "Its Sunday";
+        case Mon:
+            return "Its Monday";
+        case Tues:
+            return "Its Tuesday";
+        case Wednes:
+            return "Its Wednesday";
+        case Thurs:
+            return "Its Thursday";
+        case Fri:
+            return "Its Friday";
+        defaul:
+            return "Its Saturday";
         }
-
-    }
     
 }
 
+
 int main()
 {
-    unsigned short Day;
-
-    ReadDay(Day);
-    cout << WhatIsDay(Day);
+    cout << WhatIsDay(ReadDayOfWeek());
     return 0;
 }

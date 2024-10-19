@@ -3,54 +3,55 @@
 
 using namespace std;
 
-struct stEquation
+enum enOperationType  {Add = '+', Subtract = '-', Multiply = '*', Divide = '/'};
+
+float ReadNumber(string Message)
 {
-    float Number1, Number2;
-    char OperationType;
-};
+    float Number = 0;
+    cout << Message << endl;
+    cin >> Number;
 
-void ReadEquation(stEquation &Equation)
-{
-    cout << "Please enter number 1?\n";
-    cin >> Equation.Number1; cout << endl;
-
-    cout << "Please enter number 2?\n";
-    cin >> Equation.Number2; cout << endl;
-
-    cout << "Please enter Operation type?\n";
-    cin >> Equation.OperationType; cout << endl;
+    return Number;
 }
 
-float Calculator(stEquation Equation)
+enOperationType ReadOperationType()
 {
-    switch (Equation.OperationType)
+    char OT = '+';
+    cout << "Enter opertion type (+, -, *, /)?\n";
+    cin >> OT;
+
+    return (enOperationType) OT;
+}
+
+float Calculate(float Number1, float Number2, enOperationType OT)
+{
+    switch (OT)
     {
-    case '+':
-        return Equation.Number1 + Equation.Number2;
-        break;
-    case '-':
-        return Equation.Number1 - Equation.Number2;
-        break;
-    case '*':
-        return Equation.Number1 * Equation.Number2;
-        break;
-    case '/':
-        return Equation.Number1 / Equation.Number2;
-        break;
+    case Add:
+        return Number1 + Number2;
+    case Subtract:
+        return Number1 - Number2;
+    case Multiply:
+        return Number1 * Number2;
+    case Divide:
+        return Number1 / Number2;
     
     default:
-        cout << "Avalible Operarotrs: [+, -, *, /]";
+        cout << "\n Avalible Operarotrs: [+, -, *, /] \n";
         exit(0);
     }
-    
+}
+
+
+void PrintResult(float Result)
+{
+    cout << "Answer is: " << Result;
 }
 
 int main()
 {
-    stEquation Equation;
-
-    ReadEquation(Equation);
-    cout << Calculator(Equation);
-
+    float Number1 = ReadNumber("Please enter the first number?");
+    float Number2 = ReadNumber("Please entet the second number?");
+    PrintResult(Calculate(Number1, Number2, ReadOperationType()));
     return 0;
 }
