@@ -24,6 +24,8 @@ char GetRandomCharacter(enRandomOrder CharType)
             return char(RandomNumber(33, 47));
         case Digit:
             return char(RandomNumber(48, 57));
+        default:
+            exit(0);
     }   
 }
 
