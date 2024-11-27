@@ -42,6 +42,12 @@ enPrimeOrNot IsNumberPrime(int Number)
     return PrimeNumber;
 }
 
+void AddArrayElement(int Arr[100], int Number, int &ArrLength)
+{
+    ArrLength++;
+    Arr[ArrLength - 1] = Number;
+}
+
 void FillArrayWithRandomNumber(int Arr[100], int &ArrLength)
 {
     ArrLength = ReadPositiveNumber("Enter the number of array element?\n");
@@ -67,10 +73,7 @@ void CopyPrimeNumberOnlyInArray(int Arr1[100], int Arr2[100], int Arr1Length, in
     for (int i = 0; i < Arr1Length; i++)
     {
         if (IsNumberPrime(Arr1[i]) == PrimeNumber)
-        {
-            Arr2[Arr2Length] = Arr1[i];
-            Arr2Length++;
-        }
+           AddArrayElement(Arr2, Arr1[i], Arr2Length);
 
     }
 }
@@ -81,13 +84,12 @@ int main()
     srand((unsigned)time(__null));
     
     int Arr1[100], ArrLength;
-
     FillArrayWithRandomNumber(Arr1, ArrLength);
     cout << "\nArray 1 elements:\n"; PrintArrayElements(Arr1, ArrLength);
 
     int Arr2[100], Arr2Length = 0;
     CopyPrimeNumberOnlyInArray(Arr1, Arr2, ArrLength, Arr2Length);
     cout << "\nPrime Numbers in Array2:\n"; PrintArrayElements(Arr2, Arr2Length);
- 
+
     return 0;
 }
