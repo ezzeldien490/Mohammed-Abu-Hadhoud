@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -139,6 +140,7 @@ bool RequestPlayAgianOrNot()
 
 	if (YesOrNo == 'y' || YesOrNo == 'Y'){
 		system("clear");
+		system("color 0F");
 		return 1;
 	}
 
@@ -176,6 +178,8 @@ void StartGame()
 
 int main()
 {
+	srand((unsigned)time(__null));
+
 	StartGame();
 
 	return 0;
