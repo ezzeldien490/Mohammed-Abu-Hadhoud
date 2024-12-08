@@ -57,8 +57,6 @@ string ChoiceToString(enRockPaperScissors Choice)
 	switch (Choice)
 	{
 		case Rock:
-			return "Rock";
-		case Paper:
 			return "Paper";
 		case Scissors:
 			return "Scissors";
@@ -124,7 +122,6 @@ void ShowOverGame(int NumberOfRounds, int PlayerWonTimes, int ComputerWonTimes)
 		cout << "Player1" << "\n";
 	else
 		cout << "No Winner" << "\n";
-
 	cout << "\t\t\t________________________________________________" << endl << endl;
 }
 
@@ -179,7 +176,6 @@ void StartGame()
 int main()
 {
 	srand((unsigned)time(__null));
-
 	StartGame();
 
 	return 0;
