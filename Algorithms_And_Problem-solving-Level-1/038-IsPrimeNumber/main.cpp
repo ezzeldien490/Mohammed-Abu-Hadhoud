@@ -1,20 +1,11 @@
 #include <iostream>
 #include <cmath>
+#include "E:\Mohammed-Abu-Hadhoud\MyLibrary\mylib.h"
+
 using namespace std;
 
 enum enPrimeOrNotPrime {Prime = 1, NotPrime = 2};
 
-float ReadPositiveNumber(string Message)
-{
-    float Number;
-    do 
-    {   
-        cout << Message << endl;
-        cin >> Number; cout << endl; 
-    }while (Number <= 0);
-   
-    return Number;
-}
 
 enPrimeOrNotPrime CheckNumberPrimality(int Number)
 {
@@ -48,6 +39,6 @@ void PrintPrimeOrNot(int Number)
 
 int main()
 {
-    PrintPrimeOrNot(ReadPositiveNumber("Enter the postive number you want to check of primality?"));
+    PrintPrimeOrNot(myread::ReadPositiveNumber("Enter the postive number you want to check of primality? "));
     return 0;
 }

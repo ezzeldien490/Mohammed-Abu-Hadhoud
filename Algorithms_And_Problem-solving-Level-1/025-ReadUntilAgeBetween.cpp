@@ -1,40 +1,32 @@
 #include <iostream>
+
 using namespace std;
 
-short ReadAge()
+
+void ReadUntilAgeBetween(short From, short To)
 {
-    short Age;
-    cout << "Please enter age between 18 and 45: ";
-    cin >> Age; cout << endl;
-
-    return Age;
-}
-
-bool ValidateNumberInRange(short Age, short From, short To)
-{
-    return (Age >= From && Age <= To);
-}
-
-short ReadAgeUntilAgeBetween(short From, short To)
-{
-   short Age = ReadAge();
-
-   while (!ValidateNumberInRange(Age, From, To))
+   int Age = 0;
+   do
    {
-        cout << " [Invalid Age].\n";
-        Age = ReadAge();
-   }
+       cout << "Enter Age between " << From << " and " << To << " ?\n";
+       cin >> Age; cout << endl;
 
-   return Age;
+       if (Age < From || Age > To)
+        {
+            cout << "\t[InVaild Age].";
+            cout << endl;
+        }
+            
+
+   }while (Age < From || Age > To);
+    
+
+   cout << "\t[Valid Age].";
 }
 
-void PrintResult(short Age)
-{
-    cout << "   [Valid Age].";
-}
 
 int main()
 {
-    PrintResult(ReadAgeUntilAgeBetween(18, 45));
+    ReadUntilAgeBetween(18, 45);
     return 0;
 }
